@@ -13,15 +13,18 @@
 
 To install the `cucumber_reporter_sync` package, run the following command:
 
-`npm install cucumber_reporter_sync --save-dev`
-
+```bash
+npm install cucumber_reporter_sync --save-dev
+```
 ## Usage
 
-### Merging Cucumber Reports
+## Merging and posting test report to Slack
 
-You can merge multiple Cucumber JSON reports into a single file using the following command:
+You can also configure the library to post the merged report to a Slack channel. To do this, add the --slack <webhook-url> option with your Slack Incoming Webhook URL:
 
-`npx cucumber_reporter_sync merge --recursive --dir reports -o bin/merged-report.json`
+```bash
+npx cucumber_reporter_sync merge --recursive --dir reports --slack https://hooks.slack.com/{YOUR WEBHOOK URL}
+```
 
 ### Parameters:
 
@@ -34,21 +37,14 @@ You can merge multiple Cucumber JSON reports into a single file using the follow
 - -o <output-file> (required)
   The file path where the merged report should be saved. It will save the merged JSON to the specified file.
 
-## Posting the Merged Report to Slack
-
-You can also configure the library to post the merged report to a Slack channel. To do this, add the --slack <webhook-url> option with your Slack Incoming Webhook URL:
-
-`npx cucumber_reporter_sync merge --recursive --dir reports --slack https://hooks.slack.com/{YOUR WEBHOOK URL}`
-
-### Parameters:
-
 - --slack <webhook-url> (optional)
   The Slack webhook URL where the merged report will be posted. You'll need to create an Incoming Webhook in your Slack workspace to get this URL.
 
 #### Example:
 
-`node cucumber_reporter_sync merge --dir ./reports -o ./bin/merged-report.json --slack https://hooks.slack.com/services/XXX/YYY/ZZZ`
-
+```bash
+npx cucumber_reporter_sync merge --dir ./reports -o ./reports/merged-report.json --slack https://hooks.slack.com/services/XXX/YYY/ZZZ
+```
 ### Slack Formatting
 
 The merged Cucumber report will be posted to Slack with key information, such as:
