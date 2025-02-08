@@ -1,10 +1,9 @@
 #!/usr/bin/env node
-
 "use strict";
 
-const packageInfo = require("../package.json");
-const jmerge = require("../report_merger/main.js");
-const notifySlack = require("../slack_notify/main.js");
+const packageInfo = require("./package.json");
+const jmerge = require("./report_merger/main.js");
+const notifySlack = require("./slack_notify/main.js");
 const { Command } = require("commander");
 
 const program = new Command();

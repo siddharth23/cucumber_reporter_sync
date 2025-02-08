@@ -1,0 +1,42 @@
+name: CI/CD for cucumber_reporter
+
+on:
+  push:
+    branches:
+      - main   # Trigger on pushes to main branch
+  pull_request:
+    branches:
+      - main   # Optionally, trigger on pull requests targeting the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'   # Specify the Node.js version
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Bump version
+        run: |
+          npm version patch -m "Release v%v"   # Bump version (major, minor, patch)
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}   # Use the NPM token to authenticate
+        run: npm publish --access public  # Publish the package
