@@ -6,7 +6,7 @@ on:
       - main   # Trigger on pushes to main branch
   pull_request:
     branches:
-      - main   # Optionally, trigger on pull requests targeting the main branch
+      - main   # Trigger on pull requests targeting the main branch
 
 jobs:
   build:
@@ -14,12 +14,18 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'   # Specify the Node.js version
+          node-version: '16'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Configure Git user
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
 
       - name: Cache node modules
         uses: actions/cache@v2
@@ -34,9 +40,10 @@ jobs:
 
       - name: Bump version
         run: |
-          npm version patch -m "Release v%v"   # Bump version (major, minor, patch)
+          npm version patch -m "Release v%s"
+          git push origin main --tags  # Push updated version and tags
 
       - name: Publish to npm
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}   # Use the NPM token to authenticate
-        run: npm publish --access public  # Publish the package
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: npm publish --access public
