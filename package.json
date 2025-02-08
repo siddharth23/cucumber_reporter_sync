@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "commander": "^13.1.0",
-    "cucumber_reporter_sync": "^1.0.4",
     "fs-readdir-recursive": "^1.1.0",
     "install": "^0.13.0",
     "mkdirp": "^3.0.1",
