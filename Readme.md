@@ -1,6 +1,6 @@
 # Cucumber Reporter
 
-`cucumber-reporter` is an npm library designed to merge multiple Cucumber JSON reports and optionally post the results to a Slack channel. It helps streamline the process of aggregating Cucumber test results and sharing them in a team communication platform like Slack.
+`cucumber_reporter_sync` is an npm library designed to merge multiple Cucumber JSON reports and optionally post the results to a Slack channel. It helps streamline the process of aggregating Cucumber test results and sharing them in a team communication platform like Slack.
 
 ## Features
 
@@ -11,9 +11,9 @@
 
 ## Installation
 
-To install the `cucumber-reporter` package, run the following command:
+To install the `cucumber_reporter_sync` package, run the following command:
 
-`npm install cucumber-reporter --save-dev`
+`npm install cucumber_reporter_sync --save-dev`
 
 ## Usage
 
@@ -21,7 +21,7 @@ To install the `cucumber-reporter` package, run the following command:
 
 You can merge multiple Cucumber JSON reports into a single file using the following command:
 
-`node bin/cucumber-reporter.js merge --recursive --dir reports -o bin/merged-report.json`
+`npx cucumber_reporter_sync merge --recursive --dir reports -o bin/merged-report.json`
 
 ### Parameters:
 
@@ -38,7 +38,7 @@ You can merge multiple Cucumber JSON reports into a single file using the follow
 
 You can also configure the library to post the merged report to a Slack channel. To do this, add the --slack <webhook-url> option with your Slack Incoming Webhook URL:
 
-`node bin/cucumber-reporter.js merge --recursive --dir reports --slack https://hooks.slack.com/{YOUR WEBHOOK URL}`
+`npx cucumber_reporter_sync merge --recursive --dir reports --slack https://hooks.slack.com/{YOUR WEBHOOK URL}`
 
 ### Parameters:
 
@@ -47,7 +47,7 @@ You can also configure the library to post the merged report to a Slack channel.
 
 #### Example:
 
-`node bin/cucumber-reporter.js merge --dir ./reports -o ./bin/merged-report.json --slack https://hooks.slack.com/services/XXX/YYY/ZZZ`
+`node cucumber_reporter_sync merge --dir ./reports -o ./bin/merged-report.json --slack https://hooks.slack.com/services/XXX/YYY/ZZZ`
 
 ### Slack Formatting
 

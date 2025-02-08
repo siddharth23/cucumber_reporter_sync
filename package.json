@@ -1,29 +1,11 @@
 {
-  "name": "cucumber_reporter",
+  "name": "cucumber_reporter_sync",
   "version": "1.0.0",
-  "description": "A tool to merge Cucumber JSON reports, post cucumber reports to Slack channels and many more",
+  "description": "`cucumber-reporter` is an npm library designed to merge multiple Cucumber JSON reports and optionally post the results to a Slack channel. It helps streamline the process of aggregating Cucumber test results and sharing them in a team communication platform like Slack.",
   "main": "index.js",
   "bin": {
-    "cucumber-reporter": "./index.js"
+    "cucumber-reporter-sync": "./index.js"
   },
-  "scripts": {
-    "lint": "prettier --check ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/siddharth23/cucumber_reporter.git"
-  },
-  "homepage": "https://github.com/siddharth23/cucumber_reporter#readme",
-  "author": "Your Name <siddharth.kala1989@gmail.com>",
-  "license": "MIT",
-  "keywords": [
-    "cucumber",
-    "reports",
-    "slack",
-    "merge",
-    "testing",
-    "notifications"
-  ],
   "dependencies": {
     "commander": "^13.1.0",
     "fs-readdir-recursive": "^1.1.0",
@@ -33,11 +15,27 @@
     "istanbul": "^0.4.5",
     "nyc": "^17.1.0",
     "pkg": "^5.8.1",
-    "prettier": "^3.4.2",
-    "mocha": "^10.0.0"
+    "prettier": "^3.4.2"
   },
+  "scripts": {
+    "lint": "prettier --check ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siddharth23/cucumber_reporter.git"
+  },
+  "author": "Siddharth Kala <siddharth.kala1989@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://github.com/siddharth23/cucumber_reporter#readme",
+  "keywords": [
+    "cucumber",
+    "reports",
+    "slack",
+    "merge",
+    "testing",
+    "notifications"
+  ],
   "bugs": {
     "url": "https://github.com/siddharth23/cucumber_reporter/issues"
-  },
-  "private": false
+  }
 }
