@@ -16,6 +16,7 @@ To install the `cucumber_reporter_sync` package, run the following command:
 ```bash
 npm install cucumber_reporter_sync --save-dev
 ```
+
 ## Usage
 
 ## Merging and posting test report to Slack
@@ -45,6 +46,7 @@ npx cucumber_reporter_sync merge --recursive --dir reports --slack https://hooks
 ```bash
 npx cucumber_reporter_sync merge --dir ./reports -o ./reports/merged-report.json --slack https://hooks.slack.com/services/XXX/YYY/ZZZ
 ```
+
 ### Slack Formatting
 
 The merged Cucumber report will be posted to Slack with key information, such as:

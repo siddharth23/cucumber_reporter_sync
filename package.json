@@ -15,9 +15,6 @@
     "npm": "^10.9.2"
   },
   "devDependencies": {
-    "istanbul": "^0.4.5",
-    "nyc": "^17.1.0",
-    "pkg": "^5.8.1",
     "prettier": "^3.4.2"
   },
   "scripts": {
