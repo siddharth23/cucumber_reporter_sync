@@ -25,7 +25,7 @@
     "url": "git+https://github.com/siddharth23/cucumber_reporter.git"
   },
   "author": "Siddharth Kala <siddharth.kala1989@gmail.com>",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "homepage": "https://github.com/siddharth23/cucumber_reporter#readme",
   "keywords": [
     "cucumber",
