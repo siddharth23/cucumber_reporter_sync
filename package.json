@@ -35,7 +35,7 @@
     "notifications"
   ],
   "publishConfig": {
-    "@siddharth23:registry": "https://npm.pkg.github.com"
+    "@siddharth23:registry": "https://registry.npmjs.org"
   },
   "bugs": {
     "url": "https://github.com/siddharth23/cucumber_reporter_sync/issues"

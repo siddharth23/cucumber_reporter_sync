@@ -46,18 +46,7 @@ jobs:
           npm version patch -m "Release v%s"
           git push origin main --tags  # Push updated version and tags
 
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 16
-          registry-url: https://npm.pkg.github.com/
+      - name: Publish to npm
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
-      - run: npm publish --registry=https://npm.pkg.github.com  --access public
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: npm publish --access public
