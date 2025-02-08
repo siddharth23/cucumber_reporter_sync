@@ -19,10 +19,7 @@
   "scripts": {
     "lint": "prettier --check ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/siddharth23/cucumber_reporter_sync.git"
-  },
+  "repository": "https://github.com/siddharth23/cucumber_reporter_sync.git",
   "author": "Siddharth Kala <siddharth.kala1989@gmail.com>",
   "license": "Apache-2.0",
   "homepage": "https://github.com/siddharth23/cucumber_reporter_sync#readme",
@@ -35,7 +32,7 @@
     "notifications"
   ],
   "publishConfig": {
-    "@siddharth23:registry": "https://registry.npmjs.org"
+    "registry": "https://registry.npmjs.org"
   },
   "bugs": {
     "url": "https://github.com/siddharth23/cucumber_reporter_sync/issues"
