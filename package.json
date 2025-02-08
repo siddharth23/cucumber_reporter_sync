@@ -1,6 +1,6 @@
 {
   "name": "cucumber_reporter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tool to merge Cucumber JSON reports, post cucumber reports to Slack channels and many more",
   "main": "index.js",
   "bin": {
