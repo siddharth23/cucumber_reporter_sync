@@ -1,0 +1,43 @@
+{
+  "name": "cucumber_reporter",
+  "version": "1.0.0",
+  "description": "A tool to merge Cucumber JSON reports, post cucumber reports to Slack channels and many more",
+  "main": "index.js",
+  "bin": {
+    "cucumber-reporter": "./index.js"
+  },
+  "scripts": {
+    "lint": "prettier --check ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siddharth23/cucumber_reporter.git"
+  },
+  "homepage": "https://github.com/siddharth23/cucumber_reporter#readme",
+  "author": "Your Name <siddharth.kala1989@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "cucumber",
+    "reports",
+    "slack",
+    "merge",
+    "testing",
+    "notifications"
+  ],
+  "dependencies": {
+    "commander": "^13.1.0",
+    "fs-readdir-recursive": "^1.1.0",
+    "mkdirp": "^3.0.1"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "nyc": "^17.1.0",
+    "pkg": "^5.8.1",
+    "prettier": "^3.4.2",
+    "mocha": "^10.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/siddharth23/cucumber_reporter/issues"
+  },
+  "private": false
+}
