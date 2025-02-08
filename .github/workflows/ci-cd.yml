@@ -34,7 +34,6 @@ jobs:
           key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-modules-
-          fail-on-cache-miss: true
 
       - name: Install dependencies
         run: npm install
@@ -47,7 +46,18 @@ jobs:
           npm version patch -m "Release v%s"
           git push origin main --tags  # Push updated version and tags
 
-      - name: Publish to npm
+  publish-gpr:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 16
+          registry-url: https://npm.pkg.github.com/
+      - run: npm publish -access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-        run: npm publish --access public
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
