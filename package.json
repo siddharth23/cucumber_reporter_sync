@@ -1,6 +1,6 @@
 {
   "name": "cucumber_reporter_sync",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "`cucumber-reporter` is an npm library designed to merge multiple Cucumber JSON reports and optionally post the results to a Slack channel. It helps streamline the process of aggregating Cucumber test results and sharing them in a team communication platform like Slack.",
   "main": "index.js",
   "bin": {
