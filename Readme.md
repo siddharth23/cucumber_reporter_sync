@@ -54,3 +54,12 @@ Total number of tests
 Passed and failed tests scenarios side by side view
 
 ![Sample Slack Report](./assets/slacksample.png)
+
+# Collaborators
+
+This project is currently maintained by:
+
+- [@siddharth23](https://github.com/siddharth23)
+- ![Siddharth Kala](./assets/collaborator.jpg)
+
+Feel free to contribute if you'd like to help improve this project!
