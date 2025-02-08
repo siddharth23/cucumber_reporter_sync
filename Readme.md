@@ -1,4 +1,4 @@
-# Cucumber Reporter
+# Cucumber Reporter Sync
 
 `cucumber_reporter_sync` is an npm library designed to merge multiple Cucumber JSON reports and optionally post the results to a Slack channel. It helps streamline the process of aggregating Cucumber test results and sharing them in a team communication platform like Slack.
 
