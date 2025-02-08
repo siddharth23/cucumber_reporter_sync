@@ -34,6 +34,7 @@ jobs:
           key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-modules-
+          fail-on-cache-miss: true
 
       - name: Install dependencies
         run: npm install
