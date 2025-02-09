@@ -50,20 +50,25 @@ npx cucumber_reporter_sync merge --dir ./reports -o ./reports/merged-report.json
 ## Change The Username and Environment
 
 In order to change the username and environment, you can use set the following environment variables:
+
 ### Username
+
 ```bash
 export TEST_USERNAME={YOUR USERNAME}
 ```
+
 #### Example:
 
 ```bash
 export TEST_USERNAME=siddharth23
 ```
+
 ### Environment
 
 ```bash
 export TEST_ENV={YOUR ENVIRONMENT}
 ```
+
 #### Example:
 
 ```bash
