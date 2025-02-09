@@ -47,6 +47,29 @@ npx cucumber_reporter_sync merge --recursive --dir reports --slack https://hooks
 npx cucumber_reporter_sync merge --dir ./reports -o ./reports/merged-report.json --slack https://hooks.slack.com/services/XXX/YYY/ZZZ
 ```
 
+## Change The Username and Environment
+
+In order to change the username and environment, you can use set the following environment variables:
+### Username
+```bash
+export TEST_USERNAME={YOUR USERNAME}
+```
+#### Example:
+
+```bash
+export TEST_USERNAME=siddharth23
+```
+### Environment
+
+```bash
+export TEST_ENV={YOUR ENVIRONMENT}
+```
+#### Example:
+
+```bash
+export TEST_ENV=staging
+```
+
 ### Slack Formatting
 
 The merged Cucumber report will be posted to Slack with key information, such as:

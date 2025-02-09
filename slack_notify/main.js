@@ -4,14 +4,14 @@ const userInfo = os.userInfo();
 const { execSync } = require("child_process");
 let isSomeTestsFailed = false;
 const TEST_ENV = process.env.TEST_ENV || "Dev"; // Test environment name
-const TRIGGER_PERSON = process.env.TRIGGER_PERSON || userInfo.username; // Test environment name
+const TEST_USERNAME = process.env.TEST_USERNAME || userInfo.username; // Test environment name
 const generateSlackBlocks = (report) => {
   const blocks = [];
   blocks.push({
     type: "header",
     text: {
       type: "plain_text",
-      text: `Test Environment: ${TEST_ENV} Requested For: ${TRIGGER_PERSON}`,
+      text: `Test Environment: ${TEST_ENV} Requested For: ${TEST_USERNAME}`,
       emoji: true,
     },
   });
