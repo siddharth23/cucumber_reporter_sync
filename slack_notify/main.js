@@ -5,6 +5,7 @@ const { execSync } = require("child_process");
 let isSomeTestsFailed = false;
 const TEST_ENV = process.env.TEST_ENV || "Dev"; // Test environment name
 const TEST_USERNAME = process.env.TEST_USERNAME || userInfo.username; // Test environment name
+const CUSTOM_BLOCK = process.env.CUSTOM_BLOCK ? JSON.parse(process.env.CUSTOM_BLOCK) : null;
 const generateSlackBlocks = (report) => {
   const blocks = [];
   blocks.push({
@@ -16,6 +17,10 @@ const generateSlackBlocks = (report) => {
     },
   });
   blocks.push({ type: "divider" });
+  if(CUSTOM_BLOCK!==null){
+    blocks.push(CUSTOM_BLOCK);
+    blocks.push({ type: "divider" });
+  }
 
   // Separate features into left and right groups
   const rightFeatures = report.filter((_, index) => index % 2 !== 0);
